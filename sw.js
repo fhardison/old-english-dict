@@ -1,5 +1,6 @@
-const CACHE_NAME = 'old-english-dict-cache';
-const PREFIX = '/old-english-dict/';
+const VERSION = 'v1'
+const CACHE_NAME = 'old-english-dict-cache' + VERSION;
+const PREFIX = '/old-english-dict';
 
 // On install, cache files in /data directory
 self.addEventListener('install', event => {
