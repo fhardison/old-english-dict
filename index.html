@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OE dict PWA</title>
+  <link rel="canonical" href="https://amindforlanguage.com/old-english-dict/">
+  <link rel="manifest" href="/old-english-dict/manifest.json"></link>
+  <link rel="stylesheet" href="sakura.css" type="text/css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" ></link>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3f51b5" >
+
+</head>
+<body>
+ <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/old-english-dict/sw.js', {"scope": "/old-english-dict/"})
+        .then(function(registration) {
+            console.log(registration);
+          console.log('Service worker registered!');
+              navigator.serviceWorker.getRegistrations().then(registrations => {
+    console.log(registrations);
+    });
+
+        });
+    }
+    </script>
+  <div id="main">
+
+    <div id="search">
+      <input type="text" id="text-box" /> 
+      <button id="search-button">Search</button>
+    </div>
+
+    <div id="display-area"></div>
+
+  </div>
+    <script src="index.js" type="text/javascript" ></script>
+</body>
+</html> 
